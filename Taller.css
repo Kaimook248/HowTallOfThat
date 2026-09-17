@@ -1,0 +1,373 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #839ed3;
+
+    color: #122753;
+
+    min-height: 100vh;
+
+    padding: 20px;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 520px;
+
+    margin: 0 auto;
+}
+
+
+h1 {
+    text-align: center;
+
+    margin-bottom: 8px;
+}
+
+
+.subtitle {
+    text-align: center;
+
+    color: #485f8f;
+
+    margin-bottom: 25px;
+}
+
+.calculator,
+.camera-section,
+.calculate-section,
+.result {
+
+    background: rgb(185, 204, 235);
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 5px 20px rgba(78, 91, 199, 0.348);
+
+}
+
+.calculator label {
+    display: block;
+
+    margin-top: 15px;
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+
+.input-group {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.input-group input {
+
+    flex: 1;
+
+    padding: 12px;
+
+    border: 1px solid #3a3c85;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+}
+
+
+.input-group input:focus {
+
+    outline: none;
+
+    border-color: #763b3b;
+
+}
+
+
+.input-group span {
+
+    width: 50px;
+
+}
+
+.camera-section {
+
+    margin-top: 20px;
+
+}
+
+
+.camera-section h2 {
+
+    margin-bottom: 8px;
+
+}
+
+
+.camera-help {
+
+    color: #757eaa;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 15px;
+
+}
+
+
+.camera-container {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: black;
+
+    aspect-ratio: 4 / 3;
+
+}
+
+
+#camera {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+.crosshair {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+}
+
+
+.horizontal-line {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    top: 50%;
+
+    height: 2px;
+
+    background: white;
+
+    transform: translateY(-50%);
+
+}
+
+
+.vertical-line {
+
+    position: absolute;
+
+    top: 0;
+
+    bottom: 0;
+
+    left: 50%;
+
+    width: 2px;
+
+    background: white;
+
+    transform: translateX(-50%);
+
+}
+
+
+.center-point {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 12px;
+
+    height: 12px;
+
+    border: 2px solid white;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+}
+
+.camera-angle {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 12px;
+
+    transform: translateX(-50%);
+
+    background: rgba(0, 0, 0, 0.7);
+
+    color: white;
+
+    padding: 8px 16px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+}
+
+
+.camera-angle span {
+
+    display: block;
+
+    font-size: 13px;
+
+}
+
+
+.camera-angle strong {
+
+    display: block;
+
+    font-size: 30px;
+
+    margin-top: 2px;
+
+}
+
+.camera-status {
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 14px;
+
+    margin: 12px 0;
+
+}
+
+button {
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.secondary-button {
+
+    background: #e5e7eb;
+
+}
+
+
+.secondary-button:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+}
+
+
+.calculate-section {
+
+    margin-top: 20px;
+
+}
+
+
+.calculate-section button {
+
+    margin-top: 0;
+
+}
+
+.result {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+}
+
+
+.result > p:first-child {
+
+    color: #666;
+
+}
+
+
+#result {
+
+    font-size: 40px;
+
+    font-weight: bold;
+
+    margin: 15px 0;
+
+}
+
+
+#formula {
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 20px;
+
+}

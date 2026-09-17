@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Building Height Calculator</title>
+
+    <link rel="stylesheet" href="Taller.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>🏢 วัดความสูงอาคาร</h1>
+
+        <p class="subtitle">
+            คำนวณความสูงด้วยตรีโกณมิติ
+        </p>
+
+        <section class="calculator">
+
+            <label for="distance">
+                ระยะห่างจากอาคาร
+            </label>
+
+            <div class="input-group">
+
+                <input
+                    type="number"
+                    id="distance"
+                    placeholder="เช่น 20"
+                    min="0"
+                    step="any"
+                >
+
+                <span>เมตร</span>
+
+            </div>
+
+
+            <label for="instrumentHeight">
+                ความสูงของเครื่องมือจากพื้น
+            </label>
+
+            <div class="input-group">
+
+                <input
+                    type="number"
+                    id="instrumentHeight"
+                    placeholder="เช่น 1.5"
+                    min="0"
+                    step="any"
+                >
+
+                <span>เมตร</span>
+
+            </div>
+
+
+            <label for="angle">
+                มุมเงย
+            </label>
+
+            <div class="input-group">
+
+                <input
+                    type="number"
+                    id="angle"
+                    placeholder="เช่น 40"
+                    min="0.01"
+                    max="89.99"
+                    step="any"
+                >
+
+                <span>°</span>
+
+            </div>
+
+        </section>
+
+        <section class="camera-section">
+
+            <h2>📷 วัดมุมด้วยกล้อง</h2>
+
+            <p class="camera-help">
+                ถือโทรศัพท์ในแนวตั้ง แล้วเล็งจุดกึ่งกลางไปที่ยอดอาคาร
+            </p>
+
+
+            <div class="camera-container">
+
+                <video
+                    id="camera"
+                    autoplay
+                    playsinline
+                ></video>
+
+                <div class="crosshair">
+
+                    <div class="horizontal-line"></div>
+
+                    <div class="vertical-line"></div>
+
+                    <div class="center-point"></div>
+
+                </div>
+
+
+                <div class="camera-angle">
+                    <span>มุมเงย</span>
+
+                    <strong id="liveAngle">
+                        --°
+                    </strong>
+                </div>
+
+            </div>
+
+            <p id="cameraStatus" class="camera-status">
+                ยังไม่ได้เปิดกล้อง
+            </p>
+
+            <button
+                type="button"
+                onclick="startMeasurement()"
+            >
+                📷 เปิดกล้องและเริ่มวัดมุม
+            </button>
+
+            <button
+                type="button"
+                class="secondary-button"
+                onclick="lockAngle()"
+                id="lockButton"
+                disabled
+            >
+                🔒 ล็อกมุมนี้
+            </button>
+
+
+        </section>
+
+        <section class="calculate-section">
+
+            <button
+                type="button"
+                onclick="calculateHeight()"
+            >
+                📐 คำนวณความสูง
+            </button>
+
+        </section>
+
+        <section class="result">
+
+            <p>
+                ความสูงของอาคารโดยประมาณ
+            </p>
+
+
+            <div id="result">
+                -- m
+            </div>
+
+
+            <p id="formula">
+                H = d × tan(θ) + h
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script src="TellMe.js"></script>
+
+</body>
+
+</html>
