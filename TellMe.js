@@ -130,18 +130,18 @@ async function startMeasurement() {
 }
 
 function handleOrientation(event) {
-
+    
     if (!isMeasuring || isLocked) {
         return;
     }
 
-
+    
     if (event.beta === null) {
         return;
     }
 
     let angle =
-        90 - event.beta;
+       event.beta - 90;
 
     if (angle < 0) {
         angle = 0;
